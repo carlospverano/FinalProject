@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Separator layoutX="318.0" layoutY="44.0" orientation="VERTICAL" prefHeight="422.0" prefWidth="2.0" />
+      <Label layoutX="42.0" layoutY="64.0" text="Por favor ingresa los datos de la propiedad." />
+      <Label layoutX="45.0" layoutY="93.0" text="Dirección" />
+      <TextField fx:id="direccion" layoutX="43.0" layoutY="110.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="44.0" layoutY="144.0" text="Valor" />
+      <TextField fx:id="valor" layoutX="43.0" layoutY="161.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="46.0" layoutY="197.0" prefHeight="25.0" prefWidth="25.0" text="Area" />
+      <TextField fx:id="area" layoutX="42.0" layoutY="223.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="43.0" layoutY="261.0" text="Propietario" />
+      <TextField fx:id="propietario" layoutX="42.0" layoutY="278.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="45.0" layoutY="322.0" text="Disponibilidad" />
+      <TextField fx:id="disponibilidad" layoutX="42.0" layoutY="343.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="193.0" />
+      <Button fx:id="registrar" layoutX="108.0" layoutY="378.0" mnemonicParsing="false" onAction="#buttonActionregistrar" text="Registrar" />
+      <Label fx:id="resultado" layoutX="344.0" layoutY="31.0" prefHeight="61.0" prefWidth="90.0" />
+      <Label alignment="CENTER" layoutX="256.0" layoutY="14.0" prefHeight="17.0" prefWidth="289.0" text="Registrar Propiedad" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblPropiedades" layoutX="344.0" layoutY="59.0" prefHeight="353.0" prefWidth="429.0">
+        <columns>
+          <TableColumn fx:id="tableDireccion" prefWidth="86.0" text="Dirección" />
+          <TableColumn fx:id="tableValor" minWidth="5.0" prefWidth="109.0" text="Valor" />
+            <TableColumn fx:id="tableArea" minWidth="0.0" prefWidth="47.0" text="Area" />
+            <TableColumn fx:id="tablePropietario" prefWidth="99.0" text="Propietario" />
+            <TableColumn fx:id="tableDisponibilidad" prefWidth="87.0" text="Disponibilidad" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

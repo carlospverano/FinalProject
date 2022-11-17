@@ -192,13 +192,9 @@ public class FincaRaiz {
     	}*/
 
     }
-    public List<String> buscarPropiedad(String propiedad){
+    public List<Propiedad> buscarPropiedad(String dirrecion){
 
-        return propiedades.stream().map( (propiedad1) -> {
-            return propiedad1.getClass().getSimpleName();
-        }).filter( (propiedad2)-> {
-            return propiedad2.equalsIgnoreCase(propiedad);
-        }).collect(Collectors.toList());
+        return propiedades.stream().filter(propiedad -> propiedad.getDirecion()==dirrecion).collect(Collectors.toList());
     }
 
     public void registrarEmpleado(Empleado empleado, Administrador administrador) throws Exception {
