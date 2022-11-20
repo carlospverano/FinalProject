@@ -43,7 +43,6 @@ public class EmpleadoController implements Initializable {
     private TextField area;
     @FXML
     private ComboBox <Propietario> combopropietario;
-
     @FXML
     private TableView<Propiedad> tablaPropiedades;
 
@@ -64,22 +63,30 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     private TableView<Propietario> tablaPropietarios;
-
-
     @FXML
     private TableColumn<Propietario, String> columnaName;
-
     @FXML
     private TableColumn<Propietario, String> columnaIdPropietario;
-
     @FXML
     private TableView<Cliente> tablaClientes;
-
     @FXML
     private TableColumn<Cliente,  String> columnaNameCliente;
 
     @FXML
     private TableColumn<Cliente, String> columnaIdentificacionCliente;
+
+    private ComboBox <Cliente> comboNombreCliente;
+    private ComboBox <Cliente> comboIdCliente;
+    private ComboBox <Propietario> comboNombrePropietario;
+    private ComboBox <Propietario> comboIdPropietario;
+    private ComboBox <Propiedad> comboDireccion;
+
+
+
+
+
+
+
 
 
 
