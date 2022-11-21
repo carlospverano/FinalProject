@@ -54,8 +54,11 @@ public class LoginController {
             Parent parent = FXMLLoader.load(MainApp.class.getResource("empleado-view.fxml"));
             Scene scene = new Scene(parent, 900, 700);
             Stage stage = new Stage();
-            stage.setTitle("Principal");
+            stage.setTitle("EMPLEADO");
             stage.setScene(scene);
+            stage.initOwner(btnLogin.getScene().getWindow());
+            btnLogin.getScene().getWindow().hide();
+
             stage.show();
         }else{
             Parent parent = FXMLLoader.load(MainApp.class.getResource("administrador-view.fxml"));

@@ -15,6 +15,7 @@ import model.*;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 
 public class EmpleadoController implements Initializable {
@@ -42,6 +43,8 @@ public class EmpleadoController implements Initializable {
     @FXML
     private TextField area;
     @FXML
+    private  ComboBox<Propiedad> comboTipoPropiedad;
+    @FXML
     private ComboBox <Propietario> combopropietario;
     @FXML
     private TableView<Propiedad> tablaPropiedades;
@@ -62,6 +65,13 @@ public class EmpleadoController implements Initializable {
     private TableColumn<Propiedad, Double> columnaValor;
 
     @FXML
+    private TableColumn<Propiedad, Propiedad> columnaTipoPropiedad;
+
+
+
+
+
+    @FXML
     private TableView<Propietario> tablaPropietarios;
     @FXML
     private TableColumn<Propietario, String> columnaName;
@@ -74,21 +84,10 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     private TableColumn<Cliente, String> columnaIdentificacionCliente;
-
-    private ComboBox <Cliente> comboNombreCliente;
-    private ComboBox <Cliente> comboIdCliente;
-    private ComboBox <Propietario> comboNombrePropietario;
-    private ComboBox <Propietario> comboIdPropietario;
-    private ComboBox <Propiedad> comboDireccion;
-
-
-
-
-
-
-
-
-
+    @FXML
+    private ComboBox <Propiedad> comboSelectPropiedad;
+    @FXML
+    private ComboBox <Cliente> comboSelectCliente;
 
     @FXML
     private void comboboxEvents(ActionEvent e){}
@@ -106,6 +105,7 @@ public class EmpleadoController implements Initializable {
         String areaPropiedad = area.getText();
 
         Propietario propietarioP= combopropietario.getValue();
+        Propiedad tipoPropiedad = comboTipoPropiedad.getValue();
 
         Propiedad propiedad= new Propiedad(direccionRegistrada,Double.parseDouble(valorPropiedad),Double.parseDouble(areaPropiedad),propietarioP,Disponibilidad.DISPONIBLE);
         propiedades.add(propiedad);
@@ -129,8 +129,10 @@ public class EmpleadoController implements Initializable {
         propietarios.add(propietario1);
         tablaPropietarios.setItems(propietarios);
         tablaPropietarios.refresh(); //Actualiza la tabla
+
         try {
             finca.registrarPropietario(propietario1, finca.getEmpleados().get(0));
+            combopropietario.getItems().addAll(finca.getPropietarios());
         }
         catch (Exception e){
             e.getMessage();
@@ -149,10 +151,32 @@ public class EmpleadoController implements Initializable {
         tablaClientes.refresh(); //Actualiza la tabla
         try {
             finca.registrarCliente(cliente, finca.getEmpleados().get(0));
+
         }
         catch (Exception e){
             e.getMessage();
         }
+
+    }
+
+    public void alquilar() {
+        Propiedad propiedad = comboSelectPropiedad.getValue();
+        Cliente cliente = comboSelectCliente.getValue();
+        propiedades.add(propiedad);
+        clientes.add(cliente);
+        finca.alquiler(finca.getEmpleados().get(0), cliente, propiedad);
+        comboSelectPropiedad.getItems().addAll(finca.getPropiedades());
+
+    }
+
+    public void vender() {
+        Propiedad propiedad = comboSelectPropiedad.getValue();
+        Cliente cliente = comboSelectCliente.getValue();
+        propiedades.add(propiedad);
+        clientes.add(cliente);
+        finca.vender(finca.getEmpleados().get(0),cliente,propiedad );
+        comboSelectCliente.getItems().addAll(finca.getClientes());
+
 
     }
 
@@ -165,10 +189,16 @@ public class EmpleadoController implements Initializable {
         this.columnaArea.setCellValueFactory(new PropertyValueFactory<>("area"));
         this.columnaPropietario.setCellValueFactory(new PropertyValueFactory<>("propietario"));
         this.columnaDisponibilidad.setCellValueFactory(new PropertyValueFactory<>("disponibilidad"));
+        this.columnaTipoPropiedad.setCellValueFactory(new PropertyValueFactory<>("tipoDePropiedad"));
         this.columnaName.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaIdPropietario.setCellValueFactory(new PropertyValueFactory<>("id"));
         this.columnaNameCliente.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaIdentificacionCliente.setCellValueFactory(new PropertyValueFactory<>("id"));
+        comboSelectPropiedad.getItems().addAll(finca.getPropiedades());
+        comboTipoPropiedad.getItems().addAll(finca.getPropiedades());
+
+
+        comboSelectCliente.getItems().addAll(finca.getClientes());
 
         }
 

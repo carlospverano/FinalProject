@@ -48,18 +48,6 @@ public class FincaRaiz {
         empleados.add(empleadox);
         administradores.add(admin);
 
-        propietarios.add(new Propietario("Alejandra","2345"));
-        propietarios.add(new Propietario("Carlos","34567"));
-        propietarios.add(new Propietario("Brahian","87654"));
-        propietarios.add(new Propietario("Jojan","765432"));
-        propietarios.add(new Propietario("Harold","98776"));
-        propietarios.add(new Propietario("Camilo","87654"));
-        propietarios.add(new Propietario("Sebastian","8765"));
-        propietarios.add(new Propietario("Alejandro","23456"));
-        propietarios.add(new Propietario("Nathan","09876"));
-        propietarios.add(new Propietario("Noah","987654"));
-
-
         clientes.add(new Cliente("Juan","12345"));
         clientes.add(new Cliente("Sebastian","5678"));
         clientes.add(new Cliente("Carlos","987654"));
@@ -166,7 +154,7 @@ public class FincaRaiz {
                     System.out.println("Alquilada");
                     propiedad.setDisponibilidad(Disponibilidad.NO_DISPONIBLE);
 
-                    registrarTransaccion(empleado, cliente, propiedad);
+                    registrarTransaccion(empleado, cliente, propiedad,TipoTransaccion.ALQUILER);
 
                 }else {
                     System.out.println("La propiedad ya esta alquilada.");
@@ -192,7 +180,7 @@ public class FincaRaiz {
                     System.out.println("Vendida");
                     propiedad.setDisponibilidad(Disponibilidad.NO_DISPONIBLE);
 
-                    registrarTransaccion(empleado, cliente, propiedad);
+                    registrarTransaccion(empleado, cliente, propiedad,TipoTransaccion.VENTA);
 
 
                 }else {
@@ -204,9 +192,9 @@ public class FincaRaiz {
         }
     }
 
-    public void registrarTransaccion(Empleado empleado, Cliente cliente, Propiedad propiedad){
+    public void registrarTransaccion(Empleado empleado, Cliente cliente, Propiedad propiedad,TipoTransaccion tipoTransaccion){
 
-        transacciones.add(new Transaccion(empleado, cliente, propiedad));
+        transacciones.add(new Transaccion(empleado, cliente, propiedad,tipoTransaccion));
 
 	/*
     	Propiedad propiedadDisponible = this.obtenerPropiedad(propiedad.getDirecion());
