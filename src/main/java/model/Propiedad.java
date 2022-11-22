@@ -6,6 +6,11 @@ public class Propiedad {
     private double valor;
     private double area;
     private Propietario propietario;
+
+    public Disponibilidad getDisponibilidad() {
+        return disponibilidad;
+    }
+
     private Disponibilidad disponibilidad;
 
     public Propiedad(String direccion, double valor, double area, Propietario propietario, Disponibilidad disponibilidad) {
@@ -48,7 +53,8 @@ public class Propiedad {
         this.propietario = propietario;
     }
 
-    public Disponibilidad getDisponibilidad() {
+    public Disponibilidad
+    Disponibilidad() {
         return disponibilidad;
     }
 
@@ -58,12 +64,9 @@ public class Propiedad {
 
     @Override
     public String toString() {
-        return "Propiedad{" +
-                "direccion='" + direccion + '\'' +
-                ", valor=" + valor +
-                ", area=" + area +
-                ", propietario=" + propietario +
-                ", disponibilidad=" + disponibilidad +
-                '}';
+        return this.getClass().getSimpleName();
+
     }
+
+
 }

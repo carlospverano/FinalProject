@@ -48,16 +48,21 @@ public class FincaRaiz {
         empleados.add(empleadox);
         administradores.add(admin);
 
-        propietarios.add(new Propietario("Alejandra","2345"));
-        propietarios.add(new Propietario("Carlos","34567"));
-        propietarios.add(new Propietario("Brahian","87654"));
-        propietarios.add(new Propietario("Jojan","765432"));
-        propietarios.add(new Propietario("Harold","98776"));
-        propietarios.add(new Propietario("Camilo","87654"));
-        propietarios.add(new Propietario("Sebastian","8765"));
-        propietarios.add(new Propietario("Alejandro","23456"));
-        propietarios.add(new Propietario("Nathan","09876"));
-        propietarios.add(new Propietario("Noah","987654"));
+        clientes.add(new Cliente("Juan","12345"));
+        clientes.add(new Cliente("Sebastian","5678"));
+        clientes.add(new Cliente("Carlos","987654"));
+        clientes.add(new Cliente("Yeraldin","98765"));
+        clientes.add(new Cliente("Miriam","456789"));
+        clientes.add(new Cliente("Alejandra","12345609876"));
+        clientes.add(new Cliente("Pablo","8765423"));
+        clientes.add(new Cliente("Daniela","3456"));
+        
+
+        propiedades.add(new Propiedad("Calle 19 Nte",25000000,85.5,new Propietario("David","23456"),Disponibilidad.DISPONIBLE));
+        propiedades.add(new Propiedad("Calle 10 Nte",15000000,90.5,new Propietario("Samuel","45678"),Disponibilidad.DISPONIBLE));
+        propiedades.add(new Propiedad("Calle 5ta Sur",10000000,80.5,new Propietario("David","23456"),Disponibilidad.DISPONIBLE));
+        propiedades.add(new Propiedad("Calle 23 Nte",20000000,75.5,new Propietario("Camilo","76543"),Disponibilidad.DISPONIBLE));
+        propiedades.add(new Propiedad("Carrera 6ta",9000000,55.5,new Propietario("Anahi","6543"),Disponibilidad.DISPONIBLE));
     }
 
 
@@ -149,7 +154,7 @@ public class FincaRaiz {
                     System.out.println("Alquilada");
                     propiedad.setDisponibilidad(Disponibilidad.NO_DISPONIBLE);
 
-                    registrarTransaccion(empleado, cliente, propiedad);
+                    registrarTransaccion(empleado, cliente, propiedad,TipoTransaccion.ALQUILER);
 
                 }else {
                     System.out.println("La propiedad ya esta alquilada.");
@@ -175,7 +180,7 @@ public class FincaRaiz {
                     System.out.println("Vendida");
                     propiedad.setDisponibilidad(Disponibilidad.NO_DISPONIBLE);
 
-                    registrarTransaccion(empleado, cliente, propiedad);
+                    registrarTransaccion(empleado, cliente, propiedad,TipoTransaccion.VENTA);
 
 
                 }else {
@@ -187,9 +192,9 @@ public class FincaRaiz {
         }
     }
 
-    public void registrarTransaccion(Empleado empleado, Cliente cliente, Propiedad propiedad){
+    public void registrarTransaccion(Empleado empleado, Cliente cliente, Propiedad propiedad,TipoTransaccion tipoTransaccion){
 
-        transacciones.add(new Transaccion(empleado, cliente, propiedad));
+        transacciones.add(new Transaccion(empleado, cliente, propiedad,tipoTransaccion));
 
 	/*
     	Propiedad propiedadDisponible = this.obtenerPropiedad(propiedad.getDirecion());
