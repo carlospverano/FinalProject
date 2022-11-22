@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ac62af1-63f5-4291-815e-b0728b01f995" name="Changes" comment="Parte 4 de la ventana">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Lote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/TipoTransaccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/iniciosesion/EmpleadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/iniciosesion/EmpleadoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/iniciosesion/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/iniciosesion/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FincaRaiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FincaRaiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Propiedad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Propiedad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Transaccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Transaccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/iniciosesion/empleado-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/iniciosesion/empleado-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.MainApp" />
       </list>
