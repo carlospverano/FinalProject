@@ -8,8 +8,19 @@ public class Transaccion {
     private Propiedad propiedad;
     private LocalDateTime fechaRegistro;
 
-    public Transaccion(Empleado empleado, Cliente cliente, Propiedad propiedad) {
+    public TipoTransaccion getTipoTransaccion() {
+        return tipoTransaccion;
+    }
 
+    public void setTipoTransaccion(TipoTransaccion tipoTransaccion) {
+        this.tipoTransaccion = tipoTransaccion;
+    }
+
+    private TipoTransaccion tipoTransaccion;
+
+    public Transaccion(Empleado empleado, Cliente cliente, Propiedad propiedad, TipoTransaccion tipoTransaccion) {
+
+        this.tipoTransaccion=tipoTransaccion;
         this.empleado = empleado;
         this.cliente = cliente;
         this.propiedad = propiedad;
